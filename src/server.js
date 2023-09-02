@@ -34,7 +34,7 @@ routes.forEach(route =>{
 
 
 InitializeDbConnection().then(() =>{
-    app.listen(8000, () =>{
+    app.listen(PORT, () =>{
         console.log("server is Up 8000");
     })
 })
