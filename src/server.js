@@ -4,7 +4,9 @@ import { InitializeDbConnection } from "./db.js";
 import { routes } from "./routes/index.js";
 // import fs from 'fs';
 // import { fileURLToPath } from "url";
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
+import cors from 'cors';
+
 
 
 dotenv.config();
@@ -23,6 +25,7 @@ app.use(express.json());
 // app.get('/^(?!\/api).+/' , (req,res) =>{
 //     res.sendFile(path.join(__dirname,'..'))
 // })
+app.use(cors());
 
 routes.forEach(route =>{
     app[route.method](route.path,route.handler);
